@@ -163,7 +163,7 @@ public final class AttackAura extends Module implements TickListener {
             // AimPattern at >40 samples/min on most server configs.
             Rotation quantized = RotationUtils.applyGCD(
                     mc.player.getYaw(), mc.player.getPitch(),
-                    (float) raw.yaw(), (float) raw.pitch(),
+                    (double) raw.yaw(), (double) raw.pitch(),
                     gcdRemainder, true);
 
             float deltaYaw   = Math.abs(MathHelper.wrapDegrees((float) quantized.yaw()   - mc.player.getYaw()));

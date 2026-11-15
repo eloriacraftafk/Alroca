@@ -125,7 +125,7 @@ public final class StealthProcessHook {
             long handle = mc.getWindow().getHandle();
             if (handle == 0L) return;
 
-            String current = mc.getWindow().getTitle();
+            String current = mc.getWindow().getTitle() != null ? mc.getWindow().getTitle() : "";
             if (!WINDOW_TITLE.equals(current)) {
                 GLFW.glfwSetWindowTitle(handle, WINDOW_TITLE);
             }
